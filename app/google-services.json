@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "949435844427",
+    "project_id": "my-drinks-ebb63",
+    "storage_bucket": "my-drinks-ebb63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949435844427:android:1de5432d857cdf22d3cace",
+        "android_client_info": {
+          "package_name": "com.example.mydrinks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949435844427-0na1tdko4g4ph7hcs2hpd25pai4fe9fo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJKTPOzsyu45pZvB5RSfREGVgWkYgspV0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949435844427-0na1tdko4g4ph7hcs2hpd25pai4fe9fo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

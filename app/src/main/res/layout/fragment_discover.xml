@@ -56,10 +56,12 @@
                         android:orientation="horizontal">
 
                         <LinearLayout
+                            android:id="@+id/soft_drink_card"
                             android:layout_width="500px"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:layout_marginEnd="10dp"
+                            android:clickable="true"
                             >
 
                             <androidx.cardview.widget.CardView
@@ -85,7 +87,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Soft Drink"
+                                    android:text="Soft Drinks"
                                     android:textColor="@color/black"
                                     android:fontFamily="@font/livvic"
                                     android:layout_gravity="center_vertical"
@@ -96,6 +98,7 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/cocktail_card"
                             android:layout_width="500px"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -125,7 +128,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Cocktail"
+                                    android:text="Cocktails"
                                     android:textColor="@color/black"
                                     android:fontFamily="@font/livvic"
                                     android:layout_gravity="center_vertical"
@@ -136,6 +139,7 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/shake_card"
                             android:layout_width="500px"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -176,6 +180,7 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/cocoa_card"
                             android:layout_width="500px"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
