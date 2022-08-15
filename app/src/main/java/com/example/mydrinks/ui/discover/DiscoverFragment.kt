@@ -2,15 +2,21 @@ package com.example.mydrinks.ui.discover
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import com.example.mydrinks.Category
+import com.example.mydrinks.Database
+import com.example.mydrinks.PopularAdapter
 import com.example.mydrinks.R
 import com.example.mydrinks.databinding.FragmentDiscoverBinding
+import com.example.mydrinks.models.Recipe
+import java.util.logging.Logger
 
 class DiscoverFragment : Fragment() {
 
@@ -58,6 +64,37 @@ class DiscoverFragment : Fragment() {
             intent.putExtra("category_name", "Cocoa")
             startActivity(intent)
         }
+
+        var recipesFromDb: ArrayList<Recipe> = ArrayList<Recipe>();
+
+        Database().db.collection("recipes").get().addOnSuccessListener {
+            i -> {
+                i.forEach {
+                    test -> {
+                        val recipe = Recipe(
+                            test.get("id") as String,
+                            test.get("name") as String,
+                            test.get("img") as String,
+                            test.get("time") as String,
+                            test.get("level") as String,
+                            test.get("category") as String,
+                            test.get("ingredients") as ArrayList<String>,
+                            test.get("steps") as ArrayList<String>
+                        )
+
+                        recipesFromDb.add(recipe)
+                    }
+                }
+            }
+        }.addOnFailureListener {
+            Log.d("Error", "Nigga!!!!")
+        }
+
+        var recyclerView: RecyclerView = binding.root.findViewById(R.id.popular_recipes)
+
+        var adapter = PopularAdapter(recipesFromDb)
+
+        recyclerView.adapter = adapter
 
         return binding.root
     }
