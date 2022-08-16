@@ -16,7 +16,6 @@ import com.example.mydrinks.PopularAdapter
 import com.example.mydrinks.R
 import com.example.mydrinks.databinding.FragmentDiscoverBinding
 import com.example.mydrinks.models.Recipe
-import java.util.logging.Logger
 
 class DiscoverFragment : Fragment() {
 
@@ -65,36 +64,36 @@ class DiscoverFragment : Fragment() {
             startActivity(intent)
         }
 
-        var recipesFromDb: ArrayList<Recipe> = ArrayList<Recipe>();
+        var recipesFromDb: ArrayList<Recipe> = ArrayList();
 
-        Database().db.collection("recipes").get().addOnSuccessListener {
-            i -> {
-                i.forEach {
-                    test -> {
-                        val recipe = Recipe(
-                            test.get("id") as String,
-                            test.get("name") as String,
-                            test.get("img") as String,
-                            test.get("time") as String,
-                            test.get("level") as String,
-                            test.get("category") as String,
-                            test.get("ingredients") as ArrayList<String>,
-                            test.get("steps") as ArrayList<String>
-                        )
-
-                        recipesFromDb.add(recipe)
-                    }
-                }
+        Database().db.collection("recipes").addSnapshotListener { snapshot, e ->
+            if (e != null) {
+                return@addSnapshotListener
             }
-        }.addOnFailureListener {
-            Log.d("Error", "Nigga!!!!")
+
+            if (snapshot != null && snapshot.documents.size > 0) {
+                for (document in snapshot.documents) {
+                    val recipe = Recipe(
+                        document.id,
+                        document.get("name") as String,
+                        document.get("img") as String,
+                        document.get("time") as String,
+                        document.get("level") as String,
+                        document.get("category") as String,
+                        document.get("ingredients") as ArrayList<String>,
+                        document.get("steps") as ArrayList<String>
+                    )
+                    recipesFromDb.add(recipe)
+                }
+
+                var recyclerView: RecyclerView = binding.root.findViewById(R.id.popular_recipes)
+
+                var adapter = PopularAdapter(recipesFromDb)
+
+                recyclerView.adapter = adapter
+            }
         }
 
-        var recyclerView: RecyclerView = binding.root.findViewById(R.id.popular_recipes)
-
-        var adapter = PopularAdapter(recipesFromDb)
-
-        recyclerView.adapter = adapter
 
         return binding.root
     }
