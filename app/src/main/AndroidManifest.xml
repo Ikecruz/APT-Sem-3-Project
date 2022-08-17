@@ -13,9 +13,6 @@
             android:name=".Category"
             android:exported="false" />
         <activity
-            android:name=".Test"
-            android:exported="false" />
-        <activity
             android:name=".Home"
             android:exported="false"
             android:label="@string/title_activity_home" />
