@@ -2,6 +2,7 @@ package com.example.mydrinks.ui.discover
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -72,6 +73,7 @@ class DiscoverFragment : Fragment() {
 
             if (snapshot != null && snapshot.documents.size > 0) {
                 for (document in snapshot.documents) {
+                    Log.d("single",document.toString())
                     val recipe = Recipe(
                         document.id,
                         document.get("name") as String,
