@@ -35,14 +35,24 @@
             android:focusable="true" />
 
 
-        <androidx.recyclerview.widget.RecyclerView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/search_recipes"
-            app:spanCount="1"
-            android:layout_gravity="center"
-            tools:listitem="@layout/search_recipes_list_item"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+            android:layout_marginTop="20dp"
+            android:scrollbars="none"
+            android:scrollbarSize="0dp">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/search_recipes"
+                app:spanCount="1"
+                android:layout_gravity="center"
+                tools:listitem="@layout/search_recipes_list_item"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
+        </ScrollView>
         
     </LinearLayout>
     
