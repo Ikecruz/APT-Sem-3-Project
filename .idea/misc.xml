@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Kingjnr4/APT-Sem-3-Project/app/src/main/res/layout/fragment_discover.xml" value="0.25" />
+        <entry key="..\:/Users/Kingjnr4/APT-Sem-3-Project/app/src/main/res/layout/popular_recipes_list_item.xml" value="0.2125" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MyDrinks/app/src/main/res/drawable/button_custom.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MyDrinks/app/src/main/res/drawable/category_bg.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MyDrinks/app/src/main/res/drawable/catgory_card_bg.xml" value="0.19166666666666668" />
@@ -22,7 +24,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

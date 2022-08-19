@@ -1,14 +1,17 @@
 package com.example.mydrinks
 
 import android.content.Context
+import android.opengl.Visibility
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mydrinks.models.Recipe
+import com.example.mydrinks.utils.FavouriteUtils
 
 class PopularAdapter(private val recipe: List<Recipe>) : RecyclerView.Adapter<PopularAdapter.viewHolder>() {
 
@@ -21,12 +24,14 @@ class PopularAdapter(private val recipe: List<Recipe>) : RecyclerView.Adapter<Po
         var time: TextView
         var level: TextView
 
+
         init{
 
             img = itemView.findViewById(R.id.popular_card_img)
             name = itemView.findViewById(R.id.popular_card_name)
             time = itemView.findViewById(R.id.popular_card_time)
             level = itemView.findViewById(R.id.popular_card_level)
+
 
         }
 
@@ -44,6 +49,7 @@ class PopularAdapter(private val recipe: List<Recipe>) : RecyclerView.Adapter<Po
         holder.time.text = singleRecipe.time + " mins"
         holder.level.text = singleRecipe.level
         holder.name.text = singleRecipe.name
+
     }
 
     override fun getItemCount(): Int {
