@@ -66,7 +66,7 @@ class DiscoverFragment : Fragment() {
 
         var recipesFromDb: ArrayList<Recipe> = ArrayList();
 
-        Database().db.collection("recipes").addSnapshotListener { snapshot, e ->
+        Database().db.collection("recipes").limit(6).addSnapshotListener { snapshot, e ->
             if (e != null) {
                 return@addSnapshotListener
             }
