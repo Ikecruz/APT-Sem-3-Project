@@ -24,15 +24,14 @@
             style="@style/Widget.MaterialComponents.FloatingActionButton"
             android:layout_marginEnd="10dp"
             android:layout_marginVertical="10dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            />
+            android:background="?attr/selectableItemBackgroundBorderless"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:background="@drawable/category_bg"
             android:gravity="center_vertical|center_horizontal"
-            android:layout_marginTop="20dp">
+            android:layout_marginVertical="20dp">
 
             <TextView
                 android:id="@+id/category_name_display"
@@ -43,6 +42,23 @@
                 android:textSize="20sp" />
 
         </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:scrollbarSize="0dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/category_recipes"
+                app:spanCount="1"
+                android:layout_gravity="center"
+                tools:listitem="@layout/recipes_list_item"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
+        </ScrollView>
 
     </LinearLayout>
 

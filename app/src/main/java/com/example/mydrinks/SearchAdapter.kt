@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.mydrinks.models.Recipe
 import java.util.*
 import kotlin.collections.ArrayList
@@ -22,10 +24,16 @@ class SearchAdapter(private val recipe: ArrayList<Recipe>): Filterable, Recycler
     inner class viewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
         var name: TextView
+        var time: TextView
+        var level: TextView
+        var img: ImageView
 
         init{
 
-            name = itemView.findViewById(R.id.search_item_name)
+            name = itemView.findViewById(R.id.recipe_name)
+            time = itemView.findViewById(R.id.recipe_time)
+            level = itemView.findViewById(R.id.recipe_level)
+            img = itemView.findViewById(R.id.recipe_img)
 
         }
 
@@ -63,7 +71,7 @@ class SearchAdapter(private val recipe: ArrayList<Recipe>): Filterable, Recycler
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewHolder {
-        var value = LayoutInflater.from(parent.context).inflate(R.layout.search_recipes_list_item, parent, false)
+        var value = LayoutInflater.from(parent.context).inflate(R.layout.recipes_list_item, parent, false)
         mcontext = parent.context
         return viewHolder(value)
     }
@@ -71,6 +79,9 @@ class SearchAdapter(private val recipe: ArrayList<Recipe>): Filterable, Recycler
     override fun onBindViewHolder(holder: viewHolder, position: Int) {
         var singleRecipe = filterList[position]
         holder.name.text = singleRecipe.name
+        holder.level.text = singleRecipe.level
+        holder.time.text = singleRecipe.time + " mins"
+        Glide.with(mcontext).load(singleRecipe.img).into(holder.img)
 
         // click
     }
