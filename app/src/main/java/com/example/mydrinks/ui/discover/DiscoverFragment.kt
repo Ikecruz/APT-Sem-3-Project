@@ -73,7 +73,6 @@ class DiscoverFragment : Fragment() {
 
             if (snapshot != null && snapshot.documents.size > 0) {
                 for (document in snapshot.documents) {
-                    Log.d("single",document.toString())
                     val recipe = Recipe(
                         document.id,
                         document.get("name") as String,
@@ -92,6 +91,7 @@ class DiscoverFragment : Fragment() {
                 var adapter = PopularAdapter(recipesFromDb)
 
                 recyclerView.adapter = adapter
+
             }
         }
 

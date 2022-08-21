@@ -1,11 +1,13 @@
 package com.example.mydrinks
 
 import android.content.Context
+import android.content.Intent
 import android.opengl.Visibility
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +25,7 @@ class CategoryAdapter(private val recipe: List<Recipe>) : RecyclerView.Adapter<C
         var name: TextView
         var time: TextView
         var level: TextView
+        var box :LinearLayout
 
 
         init{
@@ -31,7 +34,7 @@ class CategoryAdapter(private val recipe: List<Recipe>) : RecyclerView.Adapter<C
             name = itemView.findViewById(R.id.recipe_name)
             time = itemView.findViewById(R.id.recipe_time)
             level = itemView.findViewById(R.id.recipe_level)
-
+            box = itemView.findViewById(R.id.box_cat)
 
         }
 
@@ -49,6 +52,11 @@ class CategoryAdapter(private val recipe: List<Recipe>) : RecyclerView.Adapter<C
         holder.time.text = singleRecipe.time + " mins"
         holder.level.text = singleRecipe.level
         holder.name.text = singleRecipe.name
+        holder.box.setOnClickListener {
+            var intent = Intent(mcontext,SingleRecipe::class.java)
+            intent.putExtra("id",singleRecipe.recipeId)
+            mcontext.startActivity(intent)
+        }
 
     }
 

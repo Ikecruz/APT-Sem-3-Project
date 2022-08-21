@@ -2,13 +2,11 @@ package com.example.mydrinks
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mydrinks.models.Recipe
@@ -27,6 +25,7 @@ class SearchAdapter(private val recipe: ArrayList<Recipe>): Filterable, Recycler
         var time: TextView
         var level: TextView
         var img: ImageView
+        var box: LinearLayout
 
         init{
 
@@ -34,6 +33,7 @@ class SearchAdapter(private val recipe: ArrayList<Recipe>): Filterable, Recycler
             time = itemView.findViewById(R.id.recipe_time)
             level = itemView.findViewById(R.id.recipe_level)
             img = itemView.findViewById(R.id.recipe_img)
+            box=itemView.findViewById(R.id.box_cat)
 
         }
 
@@ -82,8 +82,11 @@ class SearchAdapter(private val recipe: ArrayList<Recipe>): Filterable, Recycler
         holder.level.text = singleRecipe.level
         holder.time.text = singleRecipe.time + " mins"
         Glide.with(mcontext).load(singleRecipe.img).into(holder.img)
-
-        // click
+        holder.box.setOnClickListener {
+            var intent = Intent(mcontext,SingleRecipe::class.java)
+            intent.putExtra("id",singleRecipe.recipeId)
+            mcontext.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
