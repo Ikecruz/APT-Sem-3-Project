@@ -53,7 +53,9 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:scrollbarSize="0dp"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -121,14 +123,14 @@
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:orientation="vertical"
-                        android:layout_marginHorizontal="20dp">
+                        android:layout_marginEnd="10dp">
 
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="center_horizontal"
                             android:src="@drawable/ic_baseline_access_time_24"
-                            android:layout_marginEnd="15dp" />
+                            android:layout_marginBottom="10dp" />
 
                         <TextView
                             android:id="@+id/single_recipe_time"
@@ -136,7 +138,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Hahaha"
-                            android:textSize="20sp" />
+                            android:textSize="17sp" />
 
 
                     </LinearLayout>
@@ -145,14 +147,14 @@
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:orientation="vertical"
-                        android:layout_marginHorizontal="20dp">
+                        android:layout_marginHorizontal="10dp">
 
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="center_horizontal"
                             android:src="@drawable/ic_baseline_leaderboard_24"
-                            android:layout_marginEnd="15dp" />
+                            android:layout_marginBottom="10dp" />
 
                         <TextView
                             android:id="@+id/single_recipe_level"
@@ -160,7 +162,7 @@
                             android:fontFamily="@font/livvic"
                             android:layout_height="wrap_content"
                             android:text="Hahaha"
-                            android:textSize="20sp" />
+                            android:textSize="17sp" />
 
 
                     </LinearLayout>
@@ -169,14 +171,14 @@
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:orientation="vertical"
-                        android:layout_marginHorizontal="20dp">
+                        android:layout_marginHorizontal="10dp">
 
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="center_horizontal"
                             android:src="@drawable/ic_baseline_category_24"
-                            android:layout_marginEnd="15dp" />
+                            android:layout_marginBottom="10dp" />
 
                         <TextView
                             android:id="@+id/single_recipe_category"
@@ -184,7 +186,7 @@
                             android:fontFamily="@font/livvic"
                             android:layout_height="wrap_content"
                             android:text="Hahaha"
-                            android:textSize="20sp" />
+                            android:textSize="17sp" />
 
                     </LinearLayout>
 

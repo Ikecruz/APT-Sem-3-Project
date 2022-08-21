@@ -19,7 +19,7 @@ class SingleRecipe : AppCompatActivity() {
         var backBtn = findViewById<ImageView>(R.id.back_btn)
         var id = intent.getStringExtra("id").toString()
         backBtn.setOnClickListener {
-            finishActivity(0)
+            this.finish()
         }
         Database().db.collection("recipes").document(id)
             .addSnapshotListener { document, e ->
@@ -53,7 +53,7 @@ class SingleRecipe : AppCompatActivity() {
                     var txtName =  findViewById<TextView>(R.id.single_recipe_name)
                     txtLevel.text = recipe.level
                     txtCat.text = recipe.category
-                    txtTime.text = recipe.time
+                    txtTime.text = recipe.time + " mins"
                     txtName.text=recipe.name
                     Glide.with(baseContext).load(recipe.img).into(img)
                     FavouriteUtils().recipeIsInFav(recipe).addOnSuccessListener { data ->

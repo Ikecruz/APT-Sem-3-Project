@@ -30,10 +30,6 @@ class FavouriteFragment : Fragment() {
         _binding = FragmentFavouriteBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textFavourite
-        favouriteViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
         return root
     }
 

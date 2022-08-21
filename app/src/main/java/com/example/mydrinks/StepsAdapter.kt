@@ -21,8 +21,6 @@ class StepsAdapter(private val steps:List<String>)  : RecyclerView.Adapter<Steps
         init{
             stepsIndex = itemView.findViewById(R.id.steps_index)
             stepsText =itemView.findViewById(R.id.steps_text)
-
-
         }
 
     }

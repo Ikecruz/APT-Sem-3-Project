@@ -3,16 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Kingjnr4/APT-Sem-3-Project/app/src/main/res/layout/activity_category.xml" value="0.1033434650455927" />
-        <entry key="..\:/Users/Kingjnr4/APT-Sem-3-Project/app/src/main/res/layout/activity_single_recipe.xml" value="0.17028985507246377" />
-        <entry key="..\:/Users/Kingjnr4/APT-Sem-3-Project/app/src/main/res/layout/fragment_favourite.xml" value="0.1" />
-        <entry key="..\:/Users/Kingjnr4/APT-Sem-3-Project/app/src/main/res/layout/ingredients_list_item.xml" value="0.1033434650455927" />
-        <entry key="..\:/Users/Kingjnr4/APT-Sem-3-Project/app/src/main/res/layout/popular_recipes_list_item.xml" value="0.1033434650455927" />
-        <entry key="..\:/Users/Kingjnr4/APT-Sem-3-Project/app/src/main/res/layout/recipes_list_item.xml" value="0.1033434650455927" />
-        <entry key="..\:/Users/Kingjnr4/APT-Sem-3-Project/app/src/main/res/layout/steps_list_item.xml" value="0.1033434650455927" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MyDrinks/app/src/main/res/drawable/button_custom.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MyDrinks/app/src/main/res/drawable/category_bg.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MyDrinks/app/src/main/res/drawable/catgory_card_bg.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/MyDrinks/app/src/main/res/drawable/ic_fav_filled.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/MyDrinks/app/src/main/res/drawable/ic_fav_open.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MyDrinks/app/src/main/res/drawable/search_input_bg.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MyDrinks/app/src/main/res/drawable/splash_img.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MyDrinks/app/src/main/res/layout/activity_category.xml" value="0.22" />
