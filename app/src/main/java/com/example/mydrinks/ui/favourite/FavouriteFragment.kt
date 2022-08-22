@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.ScrollView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -58,6 +60,12 @@ class FavouriteFragment : Fragment() {
                     recipesFromDb.add(recipe)
                 }
 
+                val scrollView = binding.root.findViewById<ScrollView>(R.id.favourites_scrollview)
+                scrollView.visibility=View.VISIBLE
+
+                val nodata = binding.root.findViewById<LinearLayout>(R.id.favourites_no_data)
+                nodata.visibility=View.GONE
+
                 var recyclerView: RecyclerView = binding.root.findViewById(R.id.favourite_recipes)
 
                 var adapter = CategoryAdapter(recipesFromDb)
@@ -65,6 +73,7 @@ class FavouriteFragment : Fragment() {
                 recyclerView.adapter = adapter
 
             }
+
         }
 
         return root

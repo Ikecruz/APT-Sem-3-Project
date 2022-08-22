@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.ScrollView
 import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
@@ -59,6 +61,12 @@ class SearchFragment : Fragment() {
                     )
                     recipesFromDb.add(recipe)
                 }
+
+                val scrollView = binding.root.findViewById<ScrollView>(R.id.search_scrollview)
+                scrollView.visibility=View.VISIBLE
+
+                val nodata = binding.root.findViewById<LinearLayout>(R.id.search_no_data)
+                nodata.visibility=View.GONE
 
                 adapter = SearchAdapter(recipesFromDb)
                 adapter.filter.filter("")

@@ -14,7 +14,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:padding="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginBottom="?actionBarSize">
 
         <TextView
             android:layout_width="wrap_content"
@@ -38,6 +39,8 @@
 
 
         <ScrollView
+            android:id="@+id/search_scrollview"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -54,6 +57,30 @@
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
 
         </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/search_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal|center_vertical">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/no_data"
+                android:scaleType="fitCenter"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search result will appear here"
+                android:fontFamily="@font/livvic"
+                android:textSize="17dp"
+                android:layout_gravity="center_vertical|center_horizontal"/>
+
+        </LinearLayout>
         
     </LinearLayout>
     
